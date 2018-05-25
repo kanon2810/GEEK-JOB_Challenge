@@ -1,0 +1,283 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=shift_jis">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./新規%20Microsoft%20Word%20文書%20(4).files/filelist.xml">
+<title>JSF(Java Server Faces)</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>タカ</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>タカ</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>10</o:TotalTime>
+  <o:Created>2018-05-25T12:31:00Z</o:Created>
+  <o:LastSaved>2018-05-25T12:31:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>177</o:Words>
+  <o:Characters>1013</o:Characters>
+  <o:Company>UNITCOM PC</o:Company>
+  <o:Lines>8</o:Lines>
+  <o:Paragraphs>2</o:Paragraphs>
+  <o:CharactersWithSpaces>1244</o:CharactersWithSpaces>
+  <o:Version>9.2812</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:PunctuationKerning/>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536855809 -1073711037 9 0 511 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"MS Mincho";
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536870145 1791491579 18 0 131231 0;}
+@font-face
+	{font-family:Century;
+	panose-1:2 4 6 4 5 5 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:inherit;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:"ＭＳ 明朝";
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:メイリオ;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-520027393 -355991553 18 0 131231 0;}
+@font-face
+	{font-family:"\@メイリオ";
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-520027393 -355991553 18 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536870145 1791491579 18 0 131231 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Century;
+	mso-fareast-font-family:"ＭＳ 明朝";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+h4
+	{margin-top:7.5pt;
+	margin-right:0mm;
+	margin-bottom:7.5pt;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:13.5pt;
+	font-family:inherit;
+	font-weight:normal;}
+a:link, span.MsoHyperlink
+	{color:#626262;
+	mso-text-animation:none;
+	text-decoration:underline;
+	text-underline:single;
+	text-decoration:none;
+	text-line-through:none;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+ /* Page Definitions */
+@page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:99.25pt 30.0mm 30.0mm 30.0mm;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:18.0pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:868564615;
+	mso-list-type:hybrid;
+	mso-list-template-ids:298585606 -189891800 67698699 67698701 67698689 67698699 67698701 67698689 67698699 67698701;}
+@list l0:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:・;
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	font-family:メイリオ;
+	mso-bidi-font-family:Helvetica;
+	mso-ansi-font-weight:bold;}
+ol
+	{margin-bottom:0mm;}
+ul
+	{margin-bottom:0mm;}
+-->
+</style>
+</head>
+
+<body lang=JA link="#626262" vlink=purple style='tab-interval:42.0pt;
+text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:18.0pt'>
+
+<h4 style='margin-left:42.0pt;background:white'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:13.5pt;mso-fareast-font-family:メイリオ;
+mso-bidi-font-family:Helvetica;letter-spacing:.4pt'>JSF</span><span
+style='font-size:12.0pt;mso-bidi-font-size:13.5pt;font-family:メイリオ;mso-ascii-font-family:
+inherit;mso-hansi-font-family:inherit;mso-bidi-font-family:Helvetica;
+letter-spacing:.4pt'>（</span><span lang=EN-US style='font-size:12.0pt;
+mso-bidi-font-size:13.5pt;mso-fareast-font-family:メイリオ;mso-bidi-font-family:
+Helvetica;letter-spacing:.4pt'>Java Servlet Faces</span><span style='font-size:
+10.0pt;mso-bidi-font-size:13.5pt;font-family:メイリオ;mso-ascii-font-family:inherit;
+mso-hansi-font-family:inherit;mso-bidi-font-family:Helvetica;letter-spacing:
+.4pt'>）</span><span lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:13.5pt;
+mso-fareast-font-family:メイリオ;mso-bidi-font-family:Helvetica;letter-spacing:
+.4pt'><o:p></o:p></span></h4>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+9.0pt;mso-bidi-font-size:13.0pt;font-family:メイリオ;mso-bidi-font-family:Helvetica;
+color:black;letter-spacing:.4pt'>・<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><span style='font-size:9.0pt;mso-bidi-font-size:
+13.0pt;font-family:メイリオ;mso-bidi-font-family:Helvetica;color:black;letter-spacing:
+.4pt'>コスト</span></b><span lang=EN-US style='font-size:9.0pt;mso-bidi-font-size:
+13.0pt;font-family:メイリオ;mso-bidi-font-family:Helvetica;color:black;letter-spacing:
+.4pt'><br>
+オープンソースで誰でも使用可能です。ただし、JavaEEの開発環境セットを用意した場合はコストがかかります。そのため比較の表では△にしています。<br>
+&nbsp;<b>・開発効率</b><br>
+JSFは、JSR127（Javaコミュニティプロセス）で仕様策定されている標準フレームワークです。そのため、ツールベンダーが開発支援ツールを開発しやすく、プログラミングもスムーズに行うことが出来ます。また、従来のリクエスト駆動型のMVC
+Webフレームワークとは違い、コンポーネントベースのアプローチをとっています。<br>
+&nbsp;<b>・メンテナンス性能</b><br>
+最新バージョンは、2013年5月にリリースされたJSF2.2です。ですが、JSFのためのWebテンプレートエンジンの存在があるうえ、JavaEEの仕様として採用されているため、今後もサポートが続きます。<br>
+&nbsp;<b>・特徴</b><br>
+JavaEE環境で動作する、ユーザーインターフェイスフレームワークです。大きな特徴としては、MVCモデル2かつ、UIコンポーネントでWebページを構成することです。<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h4 style='margin-left:42.0pt;background:white'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:13.5pt;mso-fareast-font-family:メイリオ;
+mso-bidi-font-family:Helvetica;color:black;letter-spacing:.4pt'>Play Framework<o:p></o:p></span></h4>
+
+<p class=MsoNormal style='margin-left:18.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 18.0pt'><![if !supportLists]><span lang=EN-US style='font-size:
+9.0pt;mso-bidi-font-size:13.0pt;font-family:メイリオ;mso-bidi-font-family:Helvetica;
+color:black;letter-spacing:.4pt'>・<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><span style='font-size:9.0pt;mso-bidi-font-size:
+13.0pt;font-family:メイリオ;mso-bidi-font-family:Helvetica;color:black;letter-spacing:
+.4pt'>コスト</span></b><span lang=EN-US style='font-size:9.0pt;mso-bidi-font-size:
+13.0pt;font-family:メイリオ;mso-bidi-font-family:Helvetica;color:black;letter-spacing:
+.4pt'><br>
+オープンソースで誰でも使用可能です。<br>
+&nbsp;<br>
+<b>・開発効率</b><br>
+環境構築が容易ですぐに開発に着手することが可能です。また、フルスタックFrameworkのため、ライブラリの相性を気にすることなく開発することが出来ます。業務システムよりはWebサービスで力を発揮します。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.86gd'><b><span style='font-size:9.0pt;
+mso-bidi-font-size:13.0pt;font-family:メイリオ;mso-bidi-font-family:Helvetica;
+color:black;letter-spacing:.4pt'>メンテナンス性能</span></b><span lang=EN-US
+style='font-size:9.0pt;mso-bidi-font-size:13.0pt;font-family:メイリオ;mso-bidi-font-family:
+Helvetica;color:black;letter-spacing:.4pt'><br>
+RubyとPythonのフレームワークの良い所取りをしており、Ruby on Railsの特徴であるDRY原則に基づいている、コードの重複を避ける設計がされているため、非常にメンテナンスが行いやすい洗礼されたコードを記述することが可能です。<br>
+&nbsp;<b>・特徴</b><br>
+Play Frameworkは、バージョン2.xはScalaで記述されているため、JavaとScalaで使用可能な点と、IDEに依存しない点が大きな特徴と言えます。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.86gd'><span lang=EN-US
+style='font-size:9.0pt;mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h4 style='margin-left:42.0pt;background:white'><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:13.5pt;mso-fareast-font-family:メイリオ;
+mso-bidi-font-family:Helvetica;color:black;letter-spacing:.4pt'>Deopwizard<span
+style='background:paleturquoise'><o:p></o:p></span></span></h4>
+
+<h4 style='margin-left:42.0pt;background:white'><span lang=EN-US
+style='font-size:9.0pt;mso-bidi-font-size:13.5pt;mso-fareast-font-family:メイリオ;
+mso-bidi-font-family:Helvetica;color:black;letter-spacing:.4pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></h4>
+
+<p class=MsoNormal style='margin-left:1.86gd'><b><span style='font-size:9.0pt;
+mso-bidi-font-size:13.0pt;font-family:メイリオ;mso-bidi-font-family:Helvetica;
+color:black;letter-spacing:.4pt'>・コスト</span></b><span lang=EN-US
+style='font-size:9.0pt;mso-bidi-font-size:13.0pt;font-family:メイリオ;mso-bidi-font-family:
+Helvetica;color:black;letter-spacing:.4pt'><br>
+オープンソースで誰でも使用可能です。<br>
+&nbsp;<br>
+<b>・開発効率</b><br>
+Dropwizardはフレームワークでもあり、ライブラリでもあります。そのため、フレームワークではなく、ロジックとして開発することが可能です。また、APサーバが不要なため、ファイルに置き換えることにより容易にWebサービスを動作させることが可能です。<br>
+&nbsp;<br>
+<b>・メンテナンス性能</b><br>
+まだまだ日本での使用事例がないため、比較の表では△と表記しています。英語が出来るのであれば、機能を再利用可能なライブラリとして抽出することが可能なため、メンテナンス負荷が軽減されます。<br>
+&nbsp;<br>
+<b>・特徴</b><br>
+Dropwizardは、サーブレットコンテナを内蔵しているのでtomcat等のサーバを別で用意しなくても良い点と、アプリケーションをjarファイルとymlファイルを置き換えて起動させるデプロイ方法が大きな特徴です。</span><span
+lang=EN-US style='font-size:13.0pt;font-family:メイリオ;mso-bidi-font-family:Helvetica;
+color:black;letter-spacing:.4pt'><br>
+&nbsp;</span><span lang=EN-US style='font-size:9.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
