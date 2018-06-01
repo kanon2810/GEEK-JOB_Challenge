@@ -8,25 +8,138 @@ and open the template in the editor.
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <style>
+ 
+     body {
+  margin     : auto;
+  max-width  : 500px;
+  height     : 200px;
+                                    /* チェックパターンのCSS */
+  background-color : #fff;
+  background-image :
+      repeating-linear-gradient(45deg,
+                                rgba(255, 77, 77, 0.50),
+                                rgba(255, 77, 77, 0.50) 50px,
+                                rgba(0, 0, 0, 0) 0,
+                                rgba(0, 0, 0, 0) 100px),
+      repeating-linear-gradient(315deg,
+                                rgba(255, 77, 77, 0.50),
+                                rgba(255, 77, 77, 0.50) 50px,
+                                rgba(0, 0, 0, 0) 0,
+                                rgba(0, 0, 0, 0) 100px);
+}
+
+ 
+  </body>
+
+            
+
+        </style>
     </head>
+   
     <body>
+    
+         <font size="9">好きなアニメ調査</font>
+         <font size="5">＼(*≧◇≦)／</font>
+         
         <form action="./Test.jsp" method="post">
-      <!-- formタグで括られた入力項目はこれら -->
-      名前:<br>
+      
+           
+            
+            
+            
+      名前
       <input type="text" name="txtName"><br>
       <br>
      
-      性別:<br>
+      性別<br>
      <input type="radio" name="rdoSample" value="麺（MEN）">男性<br>
      <input type="radio" name="rdoSample" value="旨麺（WOMEN）">女性<br>
      <input type="radio" name="rdoSample" value="い、いわないでよ！！">ニューハーフ<br>
     <br>
       
-     趣味:<br>
+
+
+     趣味
      <textarea name="mulText"></textarea><br>
       <br>
+      好きなアニメは？またその理由を教えてください<br>
+      <input type="text" name="ｌ"><br>
+      <textarea name="S1"  rows="15" cols="17"> </textarea>
+      <br> 
+      <br>
+      
+      今期でお気に入りのアニメはありますか？<br>
+      <input type="text" name="t"><br>
+      <br>
+      
+      世を盛り上げた名作。あなたのピークだった頃は？（複数可）<br>
+      <input type="checkbox" name="a" value="新世紀エヴァンゲリオン">新世紀エヴァンゲリオン<br>
+      <input type="checkbox" name="a" value="涼宮ハルヒの憂鬱">涼宮ハルヒの憂鬱<br>
+       <input type="checkbox" name="a" value="らき☆すた">らき☆すた<br>
+       <input type="checkbox" name="a" value="とある科学の禁書目録">とある科学の禁書目録<br>
+       <input type="checkbox" name="a" value="けいおん!!">けいおん<br>
+       <input type="checkbox" name="a" value="ラブライブ">ラブライブ<br>
+       <input type="checkbox" name="a" value="艦これ">艦これ<br>
+       <br>
+         KEY作品は好きですか？<br>
+        <input type="radio" name="f" value="Yes">Yes
+         <input type="radio" name="f" value="No">No
+          <input type="radio" name="f" value="どちらともいえない">どちらともいえない<br>
+          <br>
+          "Yes"と答えた方、どの作品が好きですか？<br>
+          <input type="radio" name="sa" value="Kanon">Kanon(2006年)<br>
+          <input type="radio" name="sa" value="AIR">AIR(2005年)<br>
+          <input type="radio" name="sa" value="CLANNAD">CLANND(2007年,2008年)<br>
+          <input type="radio" name="sa" value="Angel Beats!">Angel Beats!(2010年)<br>
+          <input type="radio" name="sa" value="リトルバスターズ">リトルバスターズ（2012年,2013年）<br>
+          <input type="radio" name="sa" value="Charlotte">Charlotte(2015年)<br>
+          <input type="radio" name="sa" value="Rewrite">Rewrite(2016年)<br>
+          <input type="radio" name="sa" value="planetarian～星の人～" >planetarian～星の人～(2016年)
+          <br>
+          <br>
+          <br>
+          秋葉原には行きますか？<br>
+          <input  type="radio" name="hi" value="よく行く">よく行く
+          <input type="radio" name="hi" value="たまに行く">たまに行く
+          <input type="radio" name="hi" value="行ったことがない">行ったことがない<br>
+          <br>
+          "よく行く","たまに行く"と答えた方、主にどこに行っていますか？（複数回答可）<br>
+          <input type="checkbox" name="Ans" value="アニメショップ">アニメショップ<br>
+          <input type="checkbox" name="Ans" value="コスプレショップ">コスプレショップ<br>
+          <input type="checkbox" name="Ans" value="模型関連">模型関連<br>
+          <input type="checkbox" name="Ans" value="PCなどの家電">PCなどの家電<br>
+          <input type="checkbox" name="Ans" value="地下アイドルなどのイベント関連">地下アイドルなどのイベント関連<br>
+          <input type="checkbox" name="Ans" value="メイド喫茶などのサービス関連">メイド喫茶などのサービス関連<br>
+          <br>
+          コミケ（コミックマーケット）には行ったことがありますか？<br>
+          <input type="radio" name="komi" value="行ったことある">行ったことある
+          <input type="radio" name="komi" value="行ったことない">行ったことない
+          <input type="radio" name="komi" value="なにそれ？おいしいの？">なにそれ？おいしいの？<br>
+          <br>
+          "行ったことある"と答えた方どういう感じで参加されましたか？<br>
+          <input type="radio" name="it" value="普通に一般参加">普通に一般参加<br>
+          <input type="radio" name="it" value="同人誌の出展などサークルとして参加">同人誌の出展などサークルとして参加<br>
+          <input type="radio" name="it" value="コスプレ目的で参加">コスプレ目的で参加<br>
+          <br>
+          昨今の同人誌含めアニメなどの創作物に関する児童ポルノ問題をどう思いますか？<br>
+          <textarea name="S2"  rows="9" cols="28"> </textarea><br>
+          
+       
+       <br>
+       <br>
+       <br>
+       
+     
+       
       <input type="submit" name="bit"><br>
+      
+      
+      
+      
     </form>
 
     </body>
