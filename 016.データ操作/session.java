@@ -4,14 +4,16 @@
  * and open the template in the editor.
  */
 
+import static com.sun.xml.internal.ws.api.message.Packet.Status.Request;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Date;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -20,6 +22,10 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(urlPatterns = {"/session"})
 public class session extends HttpServlet {
+
+    private static void setAttribute(String name, String jyender, String syumi) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,31 +47,31 @@ public class session extends HttpServlet {
             out.println("<title>Servlet session</title>");            
             out.println("</head>");
             out.println("<body>");
-            
-       //セッションの取得
-      //HttpSession　変数名=requesut.getSession();
-      
-    //セッションからデータの読みだし
-    //HttpSession変数.getAttribute(名前);
-    //セッションへのデータの書き込み
-    //HttpSession変数.setAttribute(名前,情報);
-    
-    Date z=new Date();
-    String toki2=String.valueOf(z);
-    //最後に開いた時間を表示する
-    //セッションの取得
-    HttpSession time=request.getSession();
-    //セッションの読み出し
-    time.getAttribute("BASE");
-    
-   //セッションから情報を取得
-    String DATE=(String)time.getAttribute("BASE");
-    
-    //セッションへのデータの書き込み
-    time.setAttribute("BASE", toki2);
-    
-    out.print(DATE);
+   
+            request.setCharacterEncoding("UTF-8");
+            //入力パラメータの取得
+            String name=request.getParameter("nam");
+            String jyender=request.getParameter("jyenda");
+            String syumi=request.getParameter("syu");
+            //セッションの取得
+            HttpSession date=request.getSession();
+          
 
+            
+            //セッションへの情報の登録
+            date.setAttribute("NAME",name);
+            date.setAttribute("JYENDA",jyender);
+            date.setAttribute("SYUMI",syumi);
+             //セッションを読み出す
+            String A=(String)date.getAttribute("NAME");
+            String B=(String)date.getAttribute("JYENDA");
+            String C=(String)date.getAttribute("SYUMI");
+            
+           
+            
+            out.print(A+B+C);
+       
+          
             
             out.println("</body>");
             out.println("</html>");
