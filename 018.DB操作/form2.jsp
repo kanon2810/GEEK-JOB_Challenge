@@ -34,7 +34,7 @@
     <body>
 
      <center>
-       <br><br><br><br> <font size="10">情報追加フォーム</font><br><br><br><br><br><br><br>
+       <br><br><br><br> <font size="10">データベース操作フォーム</font><br><br><br><br><br><br><br>
         <form action="./kensaku.jsp" method="post">
             プロフィールＩＤ<input type="text" name="ID" size="2">&emsp;
             名前<input type="text" name="name" >&emsp;
@@ -45,10 +45,11 @@
             <br><br>
             <input type="submit" name="table" value="追加">
             
-            <br><br> <br><br> <br>
-            
+            <br><br> <br><br>
+        </form>  
             <%
                  request.setCharacterEncoding("UTF-8");
+                 
                  
                  String R=request.getParameter("retrun");
                 if(null==R){
@@ -56,6 +57,18 @@
                 }else{
                     out.print("もう一度最初から入力してください");
                 }
+
+                %>
+                <form action="./kensaku2.jsp" method="post">
+                    削除するＩＤ番号を入力してください<br>
+              
+                    <input type="text" name="ID2" size="2">
+            　　　　<input type="submit" name="table" value="削除"><br>
+                 <%
+                 request.setCharacterEncoding("UTF-8");
+                 
+                 request.getParameter("retrun2");
+              
 
                 %>
             
