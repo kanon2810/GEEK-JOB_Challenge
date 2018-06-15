@@ -62,7 +62,7 @@
 if(count==0){
 out.print( "情報が登録されておりません");
 }else{
-out.print("<br>"+"現在、"+count+"名の情報が登録されいます");
+out.print("<br>"+"現在、"+count+"名の情報が登録されています");
 }      %>
             <form action="./form2.jsp" method="post">
          <input type="submit" name="retrun2" value="フォームに戻る">
