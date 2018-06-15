@@ -12,21 +12,11 @@
         <title>JSP Page</title>
       <style>
 
- body{
-  background: radial-gradient(rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.15) 30%, 
-      rgba(255, 255, 255, 0.3) 32%, rgba(255, 255, 255, 0) 33%) 0px 0px / 470px 470px, 
-      radial-gradient(rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.1) 11%, rgba(255, 255, 255, 0.3) 13%, 
-      rgba(255, 255, 255, 0) 14%) 0px 0px / 970px 970px, radial-gradient(rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.2) 17%, 
-      rgba(255, 255, 255, 0.43) 19%, rgba(255, 255, 255, 0) 20%) 0px 110px / 410px 410px, radial-gradient(rgba(255, 255, 255, 0) 0px, 
-      rgba(255, 255, 255, 0.2) 11%, rgba(255, 255, 255, 0.4) 13%, rgba(255, 255, 255, 0) 14%) -130px -170px / 610px 610px, radial-gradient(rgba(255, 255, 255, 0) 0px, 
-      rgba(255, 255, 255, 0.2) 11%, rgba(255, 255, 255, 0.4) 13%, rgba(255, 255, 255, 0) 14%) 130px 370px / 530px 530px, radial-gradient(rgba(255, 255, 255, 0) 0px, 
-      rgba(255, 255, 255, 0.1) 11%, rgba(255, 255, 255, 0.2) 13%, rgba(255, 255, 255, 0) 14%) 0px 0px / 730px 730px, linear-gradient(45deg, rgb(52, 55, 2) 0%, rgb(24, 69, 0) 20%,
-      rgb(24, 117, 70) 30%, rgb(0, 103, 130) 40%, rgb(11, 18, 132) 50%, rgb(118, 14, 161) 60%, rgb(131, 9, 110) 70%, rgb(132, 11, 42) 80%, rgb(177, 62, 18) 90%, 
-      rgb(226, 116, 18) 100%) 0% 0% / 100% 100% rgb(132, 11, 42);
-}
-
-      
-
+ 
+ body {
+     background:url(gaz.gif);
+background-size:10% auto;
+ }
 </body>
              </style>
     </head>
@@ -34,8 +24,9 @@
     <body>
 
      <center>
-       <br><br><br><br> <font size="10">データベース操作フォーム</font><br><br><br><br><br><br><br>
+       <br><br><br><br> <font size="10">データベース操作フォーム</font><br><br><br><br><br>
         <form action="./kensaku.jsp" method="post">
+            追加したいレコードを入力してください<br>
             プロフィールＩＤ<input type="text" name="ID" size="2">&emsp;
             名前<input type="text" name="name" >&emsp;
             電話番号<input type="text" name="tel" size="25">&emsp;
@@ -43,7 +34,7 @@
             生年月日<input type="text" name="birthday">&emsp;
            
             <br><br>
-            <input type="submit" name="table" value="追加">
+            <input type="submit" name="t" value="追加">
             
             <br><br> <br><br>
         </form>  
@@ -55,26 +46,62 @@
                 if(null==R){
                     out.print("");
                 }else{
-                    out.print("もう一度最初から入力してください");
+                    out.print("大変お手数ですがもう一度最初からやり直してください");
                 }
 
                 %>
-                <form action="./kensaku2.jsp" method="post">
+                
+                
+                <form action="./kensaku3.jsp" method="post"><br><br>
+                    更新するレコードのＩＤを入れてください<br>
+                    <input type="text" name="ID3" size="2"><br>
+                    更新したい項目を入れてください<br>
+            名前<input type="text" name="name3">&emsp;
+            電話番号<input type="text" name="tel3" size="25">&emsp;
+            年齢<input type="text" name="age3" size="2">&emsp;
+            生年月日<input type="text" name="birthday3">&emsp;
+           
+            <br><br>
+            <input type="submit" name="te2" value="更新">
+            
+            <br>
+                </form>
+             <%
+                 request.setCharacterEncoding("UTF-8");
+                 
+                 String R2=request.getParameter("retrun4");
+                 if(null==R2){
+                     out.print("");
+                 }else{
+                     out.print("大変お手数ですがもう一度最初からやり直してください");
+                 }
+
+              %>
+        
+               <form action="./kensaku2.jsp" method="post"><br><br><br><br><br><br>
                     削除するＩＤ番号を入力してください<br>
               
                     <input type="text" name="ID2" size="2">
-            　　　　<input type="submit" name="table" value="削除"><br>
+            　　　　<input type="submit" name="ta" value="削除"><br>
+               </form>
                  <%
                  request.setCharacterEncoding("UTF-8");
                  
                  request.getParameter("retrun2");
-              
+                 
 
-                %>
+                 %>
+              
+                      <form action="./kensaku10.jsp" method="post"><br><br><br><br><br><br><br><br>
+                    テーブルの状況を確認します
+              
+                   
+            　　　　<input type="submit" name="tab" value="確認">
+                    
             
         </form>
      </center>
-    <p style="text-align: right"><img src="gaz.gif" width="150" height="230"></right</p>
+    
     
 </body>
 </html>
