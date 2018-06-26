@@ -2,7 +2,8 @@ package jums;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,19 +32,33 @@ public class InsertResult extends HttpServlet {
         
         //セッションスタート
         HttpSession session = request.getSession();
-        
+        UserDateBean Beans=(UserDateBean)session.getAttribute("bean");
         try{
+            
             //ユーザー情報に対応したJavaBeansオブジェクトに格納していく
             UserDataDTO userdata = new UserDataDTO();
-            userdata.setName((String)session.getAttribute("name"));
-            Calendar birthday = Calendar.getInstance();
-            userdata.setBirthday(birthday.getTime());
-            userdata.setType(Integer.parseInt((String)session.getAttribute("type")));
-            userdata.setTell((String)session.getAttribute("tell"));
-            userdata.setComment((String)session.getAttribute("comment"));
             
+            Calendar birthday = Calendar.getInstance();
+            Date time = new Date();
+            
+            birthday.set(Beans.getYear(),Beans.getMonth()-1,Beans.getDay());
+            time = birthday.getTime();
+       
+            userdata.setBirthday(time);
+            userdata.setName(Beans.getName());
+            userdata.setType(Beans.getType()); 
+            userdata.setTell(Beans.getTell());
+            userdata.setComment(Beans.getComment());
+            
+            request.setCharacterEncoding("UTF-8");
+             String accesschk = request.getParameter("z");
+           if(accesschk ==null|| (Integer)session.getAttribute("z")!=Integer.parseInt(accesschk)){
+          throw new Exception("不正なアクセスです");
+           }
             //DBへデータの挿入
             UserDataDAO .getInstance().insert(userdata);
+          
+          
             
             request.getRequestDispatcher("/insertresult.jsp").forward(request, response);
         }catch(Exception e){

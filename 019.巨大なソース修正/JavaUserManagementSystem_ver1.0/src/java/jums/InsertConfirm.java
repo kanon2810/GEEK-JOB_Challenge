@@ -31,28 +31,24 @@ public class InsertConfirm extends HttpServlet {
             request.setCharacterEncoding("UTF-8");//セッションに格納する文字コードをUTF-8に変更
             String accesschk = request.getParameter("ac");
             if(accesschk ==null || (Integer)session.getAttribute("ac")!=Integer.parseInt(accesschk)){
-                throw new Exception("不正なアクセスです");
+               throw new Exception("不正なアクセスです");
             }
-            
-            //フォームからの入力を取得
-            String name = request.getParameter("name");
-            String year = request.getParameter("year");
-            String month = request.getParameter("month");
-            String day = request.getParameter("day");
-            String type = request.getParameter("type");
-            String tell = request.getParameter("tell");
-            String comment = request.getParameter("comment");
-
+                 //フォームからの入力を取得
+             //UserDateBeanに格納してく
+        UserDateBean bean=new UserDateBean();
+        bean.setName(request.getParameter("name"));
+        bean.setType(Integer.parseInt(request.getParameter("type")));
+        bean.setDay(Integer.parseInt(request.getParameter("day")));
+        bean.setMonth(Integer.parseInt(request.getParameter("month")));
+        bean.setYear(Integer.parseInt(request.getParameter("year")));
+        bean.setTell(request.getParameter("tell"));
+        bean.setComment(request.getParameter("comment"));
+        
             //セッションに格納
-            session.setAttribute("name", name);
-            session.setAttribute("year", year);
-            session.setAttribute("month",month);
-            session.setAttribute("day", day);
-            session.setAttribute("type", type);
-            session.setAttribute("tell", tell);
-            session.setAttribute("comment", comment);
+           session.setAttribute("bean", bean);
+          
             System.out.println("Session updated!!");
-            
+            session.setAttribute("z", (int) (Math.random() * 1000));
             request.getRequestDispatcher("/insertconfirm.jsp").forward(request, response);
         }catch(Exception e){
             request.setAttribute("error", e.getMessage());

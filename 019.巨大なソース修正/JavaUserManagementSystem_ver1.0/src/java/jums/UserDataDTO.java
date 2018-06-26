@@ -13,6 +13,9 @@ public class UserDataDTO {
     private int userID;
     private String name;
     private Date birthday;
+    private int year;
+    private int month;
+    private int day;
     private String tell;
     private int type;
     private String comment;
@@ -32,14 +35,12 @@ public class UserDataDTO {
     public void setName(String name){
         this.name = name;
     }
-    
     public Date getBirthday(){
         return birthday;
     }
     public void setBirthday(Date birthday){
         this.birthday = birthday;
     }
-    
     public String getTell(){
         return tell;
     }
