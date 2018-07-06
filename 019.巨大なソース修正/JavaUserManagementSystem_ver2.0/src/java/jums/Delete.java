@@ -1,11 +1,13 @@
 package jums;
 
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -22,6 +24,7 @@ public class Delete extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -34,7 +37,21 @@ public class Delete extends HttpServlet {
             out.println("<title>Servlet Delete</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Delete at " + request.getContextPath() + "</h1>");
+            //セッションのセッティング
+            HttpSession session = request.getSession();
+            //getでSearchResultでsetしておいた"resultData"を再度呼び出す
+            UserDataDTO udd = (UserDataDTO)session.getAttribute("resultData");
+            //UserDataBeansのインスタンスを作成
+            UserDataBeans Beans = new UserDataBeans();
+            //Beansオブジェクトにマッピングを行う
+            udd.DTOMapping(Beans);
+           
+            //Beansを格納する　これにてResultDatailのデータを再度jsp側で呼び出せるようになる
+             session.setAttribute("Bean",Beans);
+         
+             
+         //   session.setAttribute("ac", (int) (Math.random() * 1000));
+            request.getRequestDispatcher("./delete.jsp").forward(request, response);   
             out.println("</body>");
             out.println("</html>");
         } finally {

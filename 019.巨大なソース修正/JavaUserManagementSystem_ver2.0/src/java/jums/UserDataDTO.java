@@ -1,6 +1,7 @@
 package jums;
-
+import java.text.SimpleDateFormat;
 import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -68,4 +69,48 @@ public class UserDataDTO {
         this.newDate = newDate;
     }
 
+   public  void DTOMapping(UserDataBeans Beans) {
+        String TYPE = String.valueOf(this.type);
+
+         //コンストラクト化したbirthdayを文字列変換させる
+        SimpleDateFormat year = new SimpleDateFormat("yyyy");
+	String yyyyFormat = year.format(this.birthday);
+        
+        SimpleDateFormat month = new SimpleDateFormat("MM");
+	String MMFormat = month.format(this.birthday); 
+        
+        SimpleDateFormat day = new SimpleDateFormat("dd");
+	String ddFormat = day.format(this.birthday);
+        
+        
+        Beans.setName(this.name);
+        Beans.setYear(yyyyFormat);
+        Beans.setMonth(MMFormat);
+        Beans.setDay(ddFormat);
+        Beans.setTell(this.tell);
+        Beans.setType(TYPE); 
+        Beans.setComment(this.comment);
+    }
+    
+    /*　設定時刻のミリ秒単位部分をSimpleDateFormatで切り落とすメソッド
+    
+    */
+   public String Format(Timestamp timestamp){
+       timestamp = null;
+      SimpleDateFormat  format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+       
+        timestamp = newDate;
+        
+        return format.format(timestamp );
+       
+   }
+ 
+ 
+
+
+  
+   
 }
+
+  
+

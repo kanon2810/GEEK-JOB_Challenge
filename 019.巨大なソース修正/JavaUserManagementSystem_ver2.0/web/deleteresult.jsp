@@ -1,4 +1,6 @@
-
+<%@page import="jums.JumsHelper"%>
+<%JumsHelper jh = JumsHelper.getInstance();%>
+<%HttpSession hs = request.getSession();%> 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -8,6 +10,12 @@
     </head>
     <body>
     <h1>削除確認</h1>
-    削除しました。<br>
+    削除しました。<br><br>
+     <form action="SearchResult" method="POST">
+         <input type="hidden" name="ac"  value="<%= hs.getAttribute("ac")%>"> 
+         <input type="submit" name="return" value="検索結果に戻る" style="width:100px"><br>
+      
+    </form>
+    <%=jh.home()%>
     </body>
 </html>

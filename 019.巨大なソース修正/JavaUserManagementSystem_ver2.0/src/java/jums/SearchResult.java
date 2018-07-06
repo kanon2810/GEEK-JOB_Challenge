@@ -3,10 +3,12 @@ package jums;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -27,19 +29,28 @@ public class SearchResult extends HttpServlet {
             throws ServletException, IOException {
         try{
             request.setCharacterEncoding("UTF-8");//リクエストパラメータの文字コードをUTF-8に変更
-        
+            HttpSession session = request.getSession();
+            //アクセスルートチェック
+           String accesschk = request.getParameter("ac");
+           if(accesschk ==null || (Integer)session.getAttribute("ac")!=Integer.parseInt(accesschk)){
+                throw new Exception("不正なアクセスです");
+            }
             //フォームからの入力を取得して、JavaBeansに格納
+            //nullでない（いわばサーチフォームの検索ボタンが押された状態）場合それに応じた検索。出なければ全件表示
             UserDataBeans udb = new UserDataBeans();
+            if(request.getParameter("btnSubmit")!=null){
             udb.setName(request.getParameter("name"));
             udb.setYear(request.getParameter("year"));
-            udb.setType(request.getParameter("type"));
-
+           udb.setType(request.getParameter("type"));
+            }
+ 
             //DTOオブジェクトにマッピング。DB専用のパラメータに変換
-            UserDataDTO searchData = new UserDataDTO();
+            UserDataDTO searchData = new UserDataDTO(); 
             udb.UD2DTOMapping(searchData);
-
-            UserDataDTO resultData = UserDataDAO .getInstance().search(searchData);
-            request.setAttribute("resultData", resultData);
+            
+            //型を合わせるためここでもArrayList<UserDataDTO>に
+            ArrayList<UserDataDTO> resultData = UserDataDAO.getInstance().search(searchData); 
+            session.setAttribute("resultData", resultData);
             
             request.getRequestDispatcher("/searchresult.jsp").forward(request, response);  
         }catch(Exception e){

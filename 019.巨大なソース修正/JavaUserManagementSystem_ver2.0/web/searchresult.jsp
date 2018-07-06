@@ -1,8 +1,13 @@
+
+<%@page import="java.util.ArrayList"%>
+<%@page import="jums.UserDataBeans"%>
 <%@page import="jums.JumsHelper"
         import="jums.UserDataDTO" %>
-<%
+<% 
     JumsHelper jh = JumsHelper.getInstance();
-    UserDataDTO udd = (UserDataDTO)request.getAttribute("resultData");
+    //ArrayList<UserDataDTO>をリクエストスコープで受け取る
+    ArrayList<UserDataDTO> udd = (ArrayList<UserDataDTO>)session.getAttribute("resultData");
+   UserDataDTO DTO = new UserDataDTO();
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,7 +18,9 @@
     </head>
     <body>
         <h1>検索結果</h1>
+       
         <table border=1>
+            
             <tr>
                 <th>名前</th>
                 <th>生年</th>
@@ -21,11 +28,15 @@
                 <th>登録日時</th>
             </tr>
             <tr>
-                <td><a href="ResultDetail?id=<%= udd.getUserID()%>"><%= udd.getName()%></a></td>
-                <td><%= udd.getBirthday()%></td>
-                <td><%= udd.getType()%></td>
-                <td><%= udd.getNewDate()%></td>
-            </tr>
+             
+<% for ( int i = 0; i < udd.size(); i++ ){%>
+  
+             <td><a href="ResultDetail?id=<%= udd.get(i).getUserID()%>"><%= udd.get(i).getName()%></a></td>
+               <td><%= udd.get(i).getBirthday()%></td>
+                <td><%= udd.get(i).getType()%></td>
+                <td><%= udd.get(i).Format(DTO.getNewDate())%></td>
+                 </tr>
+                  <%}%>  
         </table>
     </body>
     <%=jh.home()%>

@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -34,7 +35,20 @@ public class Update extends HttpServlet {
             out.println("<title>Servlet Update</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Update at " + request.getContextPath() + "</h1>");
+            
+            //セッションのセッティング
+            HttpSession session = request.getSession();
+            //getでSearchResultでsetしておいた"resultData"を再度呼び出す
+            UserDataDTO udd = (UserDataDTO)session.getAttribute("resultData");
+            //UserDataBeansのインスタンスを作成
+            UserDataBeans Beans = new UserDataBeans();
+            //Beansオブジェクトにマッピングを行う
+            udd.DTOMapping(Beans);
+           
+            //Beansを格納する　これにてResultDatailのデータを再度jsp側で呼び出せるようになる
+             session.setAttribute("Bean",Beans);
+         
+            request.getRequestDispatcher("./update.jsp").forward(request, response);
             out.println("</body>");
             out.println("</html>");
         } finally {

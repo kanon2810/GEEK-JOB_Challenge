@@ -1,6 +1,7 @@
 package jums;
-
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+
 
 /**
  * 画面系の処理や表示を簡略化するためのヘルパークラス。定数なども保存されます
@@ -17,6 +18,7 @@ public class JumsHelper {
     
     //トップへのリンクを返却
     public String home(){
+  
         return "<a href=\""+homeURL+"\">トップへ戻る</a>";
     }
     
@@ -71,4 +73,6 @@ public class JumsHelper {
         }
         return "";
     }
+   
+  
 }

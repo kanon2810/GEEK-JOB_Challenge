@@ -1,8 +1,10 @@
 package jums;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * ページで入出力されるユーザー情報を持ちまわるJavaBeans。DTOと違い画面表示系への結びつきが強い
@@ -152,5 +154,10 @@ public class UserDataBeans implements Serializable{
         udd.setType(this.type);
         udd.setComment(this.comment);
     }
+    
+   
+    
+
+ 
     
 }

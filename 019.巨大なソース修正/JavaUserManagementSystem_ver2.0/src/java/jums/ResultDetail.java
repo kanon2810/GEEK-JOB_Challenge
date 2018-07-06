@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -25,19 +26,31 @@ public class ResultDetail extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try{
+            HttpSession session = request.getSession();
+      
             request.setCharacterEncoding("UTF-8");//リクエストパラメータの文字コードをUTF-8に変更
+         UserDataDTO udd = (UserDataDTO)request.getAttribute("resultData");
+           //入力したものに応じて個人の情報を表示させるためアクセス情報をパラメート
+           String id = request.getParameter("id");
 
+            
+          
+            
             //DTOオブジェクトにマッピング。DB専用のパラメータに変換
+            //String idを文字列に変換してあげる
             UserDataDTO searchData = new UserDataDTO();
-            searchData.setUserID(2);
+           searchData.setUserID(Integer.parseInt(id));
 
             UserDataDTO resultData = UserDataDAO .getInstance().searchByID(searchData);
-            request.setAttribute("resultData", resultData);
+            
+            
+            
+           session.setAttribute("resultData", resultData);
             
             request.getRequestDispatcher("/resultdetail.jsp").forward(request, response);  
         }catch(Exception e){
             //何らかの理由で失敗したらエラーページにエラー文を渡して表示。想定は不正なアクセスとDBエラー
-            request.setAttribute("error", e.getMessage());
+          request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/error.jsp").forward(request, response);
         }        
     }
